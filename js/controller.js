@@ -193,7 +193,7 @@ function loadFromLocal(){
 }
 
 function saveToServer(){
-    fetch('http://localhost:3000/save',{
+    fetch('http://localhost:3000/saveToFile',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -210,7 +210,7 @@ function saveToServer(){
 }
 
 function loadFromServer(){
-    fetch('http://localhost:3000/load')
+    fetch('http://localhost:3000/loadToFile')
     .then(response=>response.json())
     .then(data=>{
         //Convert plain objects to Item instances
@@ -222,3 +222,4 @@ function loadFromServer(){
         console.log('Error is ',err);
     });
 }
+
